@@ -63,6 +63,8 @@ The overall goal of the users, child and parent/guardian (P/G) for this project 
 - **Child** | To initially be shown how the quiz game works by a parent/guardian
 - **P/G** | To read about the quiz game and how to play
 - **P/G** | To show child how to play and interact with the quiz game
+- **P/G** | To chose whether the quiz game reads out the question or the P/G does
+- **Child** | Be able to choose from several different quiz games 
 - **Child** | Begin to learn/improve on the fundamental concepts included in content of the quiz games
 
 #### Returning Visitor Goals
@@ -77,19 +79,65 @@ The overall goal of the users, child and parent/guardian (P/G) for this project 
 - **P/G** | Observe child progress with their understanding of the concepts included
 - **P/G** | Observe child progress with relevant fine motor skills and confidence of using relevant smart device
 
-Table of oppurtunties with importance and viability
+#### Opportunities
+
+Based on the above goals, the following oppurnities were mapped out:
+
+| Oppurtunity                 | Importance | Viability/Feasibility |
+| --------------------------- | :--------: | :-------------------: |
+| How to play section         | 5          | 5                     |
+| Colour match quiz           | 5          | 5                     |
+| Number match quiz           | 4          | 5                     |
+| Faces and feelings quiz     | 5          | 4                     |
+| Animal sounds quiz          | 3          | 1                     |
+| Shape selection quiz        | 5          | 4                     |
+| Letter match quiz           | 4          | 5                     |
+| Difficulty/Age mode         | 1          | 1                     |
+| Audio toggle button         | 4          | 3                     |
+| Contact link/information    | 3          | 5                     |
+| Positive feedback responses | 5          | 4                     |
+| Self-correction feedback    | 5          | 4                     |
+|                             | **54**     | **51**                |
 
 ### Scope Plane
 
 ---
 
-PLACEHOLDER TEXT
+Mapping out the oppurtunities has revealed that not all of the features will be in scope as part of the initial development of this project. The following have been decided to be in scope:
+
+ - A how to play section outlining the instrctions of the quiz game to the P/G 
+ - Colour match quiz
+ - Number match quiz
+ - Faces and feelings quiz
+ - Shape selection quiz
+ - An audio toggle button
+ - Contact link/information to the developer/project owner
+ - Positive feedback responses to encourage the child and keep the project fun and interactive
+ - Self-correction feedback to allow the child to select the correct answer for themselves and learn, keeping the fun aspect
+
+ Additionally, using the strategy plane as a guide, other elememts have been identified to be included in the scope of the project:
+
+ - A minimalistic, clean and clutter free design, with minimal buttons or links
+ - A colour scheme appropriate for and targetted towards a pre-school aged demographic
+ - For familiarality throughout, a consistent look and navigation with the only changes being the home page and the varying quiz contents
+
+The features decided to not been in scope for the initial development of this project include the difficulty/age mode selection, as well as the animal sounds and number match quiz. The decision for the exclusion of the difficulty/age mode selection was due to the lack of importance, as the target demographic is a small age difference were the difficulty level is likely to be similar. In future, the project, can be developed further for older children and include more diffuclt quizzes were this feature would be more important. The exclusion of the animal sounds quiz was due to, at the time of writing, a lack of knowledge/experience in the languages and/or techniques required to make this feature a reality. In addition to this, due to time contraints, a decision was made to only include 4 different quiz games and therefore the animal sounds quiz and the letter match quix were chosen to be excluded from the scope at this stage.
 
 ### Structure Plane
 
 ---
 
-PLACEHOLDER TEXT
+The Little Launch Pad project will utilize a theme specifically designed for preschool children (ages 2-4). Careful research will inform the selection of the color scheme, imagery, and other design elements, ensuring the final product remains fun and interactive without being visually overwhelming for the target audience.
+
+#### Layout
+
+To ensure the application is simple and intuitive for preschool children, the design will incorporate a more linear narrative structure. The main homepage will serve as the central hub, providing access to four distinct quiz games, "How to Play" instructions, contact details, and an audio toggle. Navigation elements intended for the child user (links to quiz games) will be significantly larger and more prominent than those for the P/G. Within the quiz sections, the only navigation available will be a simple return button to the homepage, reinforcing a straightforward structure essential for this young demographic.
+
+#### *Colour Scheme*
+
+#### *Typography*
+
+#### *Imagery & Icons*
 
 ### Skeleton Plane
 
