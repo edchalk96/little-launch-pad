@@ -176,15 +176,15 @@ A minimal use of imagery is intentional to preserve simplicity for the target de
 
 Balsamiq was utilized to develop the project's wireframes, which serve as the foundational concept and initial visualization. These wireframes act as a crucial blueprint for the final structure and layout across various device types. Links to the detailed wireframes are provided below:
 
-- #### Home Page | [View](placeholder)
+- #### Home Page | [View](./documentation/wireframes/little-launch-pad-home-page.pdf)
 
-- #### Quiz 1 | [View](placeholder)
+- #### Colours | [View](./documentation/wireframes/little-launch-pad-colours.pdf)
 
-- #### Quiz 2 | [View](placeholder)
+- #### Numbers | [View](./documentation/wireframes/little-launch-pad-numbers.pdf)
 
-- #### Quiz 3 | [View](placeholder)
+- #### Shapes | [View](./documentation/wireframes/little-launch-pad-shapes.pdf)
 
-- #### Quiz 4 | [View](placeholder)
+- #### Feelings and Faces | [View](./documentation/wireframes/little-launch-pad-feelings-and-faces.pdf)
 
 Being an initial concept, some aspects were altered during development of the project as well as some minor additions being added. The below list are the amendments and additions made to project, not seen in the wireframes:
 
