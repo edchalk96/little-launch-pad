@@ -124,8 +124,6 @@ Mapping out the oppurtunities has revealed that not all of the features will be 
 
 The features decided to not been in scope for the initial development of this project include the difficulty/age mode selection, as well as the animal sounds and number match quiz. The decision for the exclusion of the difficulty/age mode selection was due to the lack of importance, as the target demographic is a small age difference were the difficulty level is likely to be similar. In future, the project, can be developed further for older children and include more diffuclt quizzes were this feature would be more important. The exclusion of the animal sounds quiz was due to, at the time of writing, a lack of knowledge/experience in the languages and/or techniques required to make this feature a reality. For similar reasons, as well as a lack of importance due to the age at which it is diagnosed against the target age group, a toggle button for those that are colour blind will not be added at this stage. In addition to this, due to time contraints, a decision was made to only include 4 different quiz games and therefore the animal sounds quiz and the letter match quix were chosen to be excluded from the scope at this stage.
 
-Color bind setting Toggle button
-
 ### Structure Plane
 
 ---
