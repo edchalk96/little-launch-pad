@@ -188,6 +188,8 @@ Being an initial concept, some aspects were altered during development of the pr
 
 - PLACEHOLDER TEXT
 
+An afterthough of which orientation would be most beneficial occurred whilst developing the project. Although it will be designed to use in portrait orientation, it will be included in the instructions to use a landscape orientation to the benefit of the child. The orientation shown in the wireframe however were portrait, for smart devices.
+
 ### Surface Plane
 
 ---

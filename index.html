@@ -9,69 +9,80 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Varela+Round&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/13b3abd37d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="assets/images/little-launch-pad-logo-icon.png">
     <title>Little Launch Pad</title>
 </head>
 <body>
     <!-- ==========Start of Header========== -->
-    <header>
-        <div class="container-fluid">
-            <div class="row">   
-                <button id="home-button" class="col">
-                    <a href="./index.html">
-                        <i class="fa-solid fa-house"></i>
-                    </a>
-                </button>
-                <div class="col-5 text-center">
-                    <a class="navbar-brand" href="./index.html">
-                        <img src="./assets/images/little-launch-pad-logo.png" alt="Little Launch Pad Logo" width="100">
-                    </a>
-                </div>
-                <!-- Button to toggle audio -->
-                <button class="col">
-                    <i class="fa-solid fa-volume-high"></i>
-                </button>
-            </div>
-        </div>
+    <header class="d-flex align-items-center justify-content-between p-2">
+        
+        <!-- Home page button-->
+        <a href="./index.html" class="btn circular-btn">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- Logo -->
+        <img src="./assets/images/little-launch-pad-logo.png" alt="Little Launch Pad Logo" class="logo-img">
+
+        <!-- Button to toggle audio -->
+        <button class="btn circular-btn">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+        
     </header>
     <!-- ==========End of Header========== -->
 
     <!-- ==========Start of Quiz Selection========== -->
-    <div id="quiz-selection" class="container">
-        <div class="row">
-            <div class="col quiz-selector">
-                <h2>Colours</h2>
-            </div>
-            <div class="col quiz-selector">
-                <h2>Numbers</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col quiz-selector">
-                <h2>Shapes</h2>
-            </div>
-            <div class="col quiz-selector">
-                <h2>Faces and Feelings</h2>
-            </div>
+    
+    <div class="container quiz-options">
+        <div class="row shadow">
+            <a href="" class="col-6 mb-4">
+                <div class="p-3 quiz-selector shadow" id="colours-link">
+                    <h2>COLOURS</h2>
+                    <i class="fa-solid fa-rainbow"></i>
+                </div>
+            </a>
+
+            <a href="" class="col-6 mb-4">
+                <div class="p-3 quiz-selector shadow" id="numbers-link">
+                    <h2>NUMBERS</h2>
+                    <i class="fa-solid fa-1"></i>
+                    <i class="fa-solid fa-2"></i>
+                    <i class="fa-solid fa-3"></i>
+                </div>
+            </a>
+
+            <a href="" class="col-6 mb-4">
+                <div class="p-3 quiz-selector shadow" id="shapes-link">
+                    <h2>SHAPES</h2>
+                    <i class="fa-solid fa-shapes"></i>
+                </div>
+            </a>
+
+            <a href="" class="col-6 mb-4">
+                <div class="p-3 quiz-selector shadow" id="feelings-link">
+                    <h2>FEELNGS</h2>
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+            </a>
         </div>
     </div>
     <!-- ==========End of Quiz Selection========== -->
 
     <!-- ==========Start of How to Play========== -->
-    <section>
-        <div>
-            <div>
-                <button class="btn" data-bs-toggle="collapse" type="button" data-bs-target="#instructions" aria-expanded="false" aria-controls="instructions">
-                    How to Play
-                </button>
-            </div>
-            <div class="collapse" id="instructions">
-                <div class="card card-body">
-                    Lorem ipsum
-                </div>
+    <div class="text-center container-sm" id="howToPlay">
+        <div class="row">
+            <button class="btn" data-bs-toggle="collapse" type="button" data-bs-target="#instructions" aria-expanded="false" aria-controls="instructions">
+                How to Play
+            </button>
+        </div>
+        <div class="collapse" id="instructions">
+            <div class="card card-body">
+                <p>Lorem ipsum</p>
             </div>
         </div>
-    </section>
+    </div>
     <!-- ==========End of How to Play========== -->
 
     <!-- Footer across all pages -->
@@ -84,7 +95,6 @@
                 <a href="https://github.com/edchalk96" class="contact-link" id="gitHubLink">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                
                 <a href="" class="contact-link" id="discordLink">
                     <i class="fa-brands fa-discord"></i>
                 </a>
