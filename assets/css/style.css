@@ -1,35 +1,37 @@
 /*-----General styling-----*/
 
 body {
-    font-family: DynaPuff, sans-serif;
-    color: #F8F8F8;
-    min-height: 100vh;
-    display: grid;
+  font-family: DynaPuff, sans-serif;
+  min-height: 100vh;
+  display: grid;
 }
 
 p {
-    font-family: Varela Round, sans-serif;
-    color: black;
+  font-family: Varela Round, sans-serif;
+}
+
+ol {
+  font-family: Varela Round, sans-serif;
 }
 
 /*-----Colours-----*/
 
 /* Credit https://www.w3schools.com/css/css3_gradients.asp for gradient code */
 body {
-    background-image: linear-gradient(to bottom, #87CEEB, #87CEEB, #f8f8f8);
+  background-image: linear-gradient(to bottom, #87CEEB, #87CEEB, #f8f8f8);
 }
 
 .circular-btn {
-    background-color: #F8F8F8;
-    border-color: #F8F8F8;
+  background-color: #F8F8F8;
+  border-color: #F8F8F8;
 }
 
 header i {
-    color: #FF7F50;
+  color: #FF7F50;
 }
 
 .circular-btn :hover {
-    color: #F8F8F8;
+  color: #F8F8F8;
 }
 
 .quiz-options .row{
@@ -92,6 +94,22 @@ header i {
   text-shadow: 0.5px 0.5px 0.5px #FF7F50;
 }
 
+#how-to-play button {
+  background-color: #F8F8F8;
+  color: #FF7F50;
+}
+
+#instructions {
+  /* background-color: #F8F8F8; */
+  color: #87CEEB;
+}
+
+footer p {
+  color: #87CEEB;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 footer i {
     color: #87CEEB;
 }
@@ -128,21 +146,21 @@ footer i:hover {
 
 @media (max-width: 575.98px) {
     .circular-btn {
-        width: 3rem;
-        height: 3rem;
-        font-size: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
     }
 
     .circular-btn :hover {
-    font-size: 2rem;
+      font-size: 2rem;
 }
 
     .logo-img {
-        height: 7rem;
+      height: 7rem;
     }
 
     header {
-        padding: 0.5rem 0.5rem !important;
+      padding: 0.5rem 0.5rem !important;
     }
 }
 
@@ -159,41 +177,75 @@ footer i:hover {
 }
 
 .quiz-selector {
-    text-align: center;
-    border-radius: 1rem;
-    max-height: fit-content;
-    margin-top: 20px;
+  text-align: center;
+  border-radius: 1rem;
+  max-height: fit-content;
+  margin-top: 20px;
 }  
 
 .quiz-options a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .quiz-selector i {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 @media (max-width: 575.98px) {
 
-    .quiz-options {
+  .quiz-options {
     padding: 2rem;
-    }
+  }
 
-    .quiz-selector i {
-        font-size: 1.5rem;
-    }
+  .quiz-selector i {
+    font-size: 1.5rem;
+  }
 
-    .quiz-selector h2 {
-        font-size: 1.25rem;
-    }
+  .quiz-selector h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 344.98px) {
+
+  #numbers-link i {
+    font-size: 1rem;
+  }
+
 }
 
 /*----- End of Quiz selection styling-----*/
 
 /*----- Start of How to Play selection styling-----*/
 
-#howToPlay {
-    border: 5px, solid;
+#how-to-play button {
+  border-radius: 0.5rem;
+}
+
+#how-to-play button:hover {
+  text-decoration: underline;
+  font-size: 1.25rem;
+}
+
+#instructions {
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 5px;
+}
+
+.card {
+  background-color: #F8F8F8;
+  border: none;
+}
+
+ol {
+  margin-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  ol {
+    font-size: small;
+  }
 }
 
 /*----- End of How to Play selection styling-----*/
@@ -201,7 +253,7 @@ footer i:hover {
 /*----- Start of Footer selection styling-----*/
 
 footer a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /*----- End of Footer selection styling-----*/
