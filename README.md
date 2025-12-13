@@ -226,3 +226,5 @@ PLACEHOLDER TEXT
 Colours: <https://www.color-hex.com/color/98fb98> and Ajilian Abbasi, M., Talaei, A., Talaei, A., Rezaei, A. (2014). 'The use of appropriate colors in the design of children's rooms: A Short Review', Journal of Pediatric Perspectives, 2(4.1), pp. 305-312. doi: 10.22038/ijp.2014.3204
 
 Google Gemini was used to create the logo for the project.
+
+Credit to MDN Web Docs for providing a knowledge on various elements within html, css and JavaScript.

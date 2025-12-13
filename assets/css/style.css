@@ -118,6 +118,25 @@ footer i:hover {
     color: #FF7F50;
 }
 
+.question-text {
+  color: #F8F8F8;
+  text-shadow: 1px 1px 1px grey;
+}
+
+.answer-selection {
+  background-color: #F8F8F8;
+}
+
+.repeat-audio {
+  color: #f8f8f8;
+  text-shadow: 1px 1px 1px grey;
+}
+
+.repeat-audio button {
+  background-color: #FF7F50;
+  color: #F8F8F8;
+  text-shadow: 1px 1px 1px grey;
+}
 /*----- Start of Header styling-----*/
 
 .circular-btn {
@@ -164,6 +183,26 @@ footer i:hover {
     }
 }
 
+@media (max-height: 500px) {
+  .circular-btn {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+    }
+
+    .circular-btn :hover {
+      font-size: 2rem;
+}
+
+    .logo-img {
+      height: 6rem;
+    }
+}
+
+.invisible-placeholder {
+  visibility: hidden;
+}
+
 /*----- End of Header styling-----*/
 
 /*----- Start of Quiz selection styling-----*/
@@ -182,6 +221,54 @@ footer i:hover {
   max-height: fit-content;
   margin-top: 20px;
 }  
+
+a:has(#colours-link) :hover {
+  border-style: solid;
+  border-color: #87CEEB;
+  h2 {
+    border-style: none;
+  }
+  i {
+    border-style: none;
+  }
+}
+
+a:has(#numbers-link) :hover {
+  border-style: solid;
+  border-color: #FFD700;
+  h2 {
+    border-style: none;
+  }
+  i {
+    border-style: none;
+  }
+}
+
+a:has(#shapes-link) :hover {
+  border-style: solid;
+  border-color: #FF7F50;
+  h2 {
+    border-style: none;
+  }
+  i {
+    border-style: none;
+  }
+}
+
+a:has(#feelings-link) :hover {
+  border-style: solid;
+  border-color: #98FB98;
+  h2 {
+    border-style: none;
+  }
+  i {
+    border-style: none;
+  }
+}
+
+h2 :hover {
+  border-style: none;
+}
 
 .quiz-options a {
   text-decoration: none;
@@ -203,6 +290,29 @@ footer i:hover {
 
   .quiz-selector h2 {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .quiz-options {
+    padding: 1rem;
+  }
+
+  .quiz-options a {
+    margin-bottom: 1rem !important;
+  }
+
+  .quiz-selector {
+    padding: 0.5rem !important;
+    margin-top: 1rem;
+  }
+
+  .quiz-selector i {
+    font-size: 1rem;
+  }
+
+  .quiz-selector h2 {
+    font-size: 1rem;
   }
 }
 
@@ -248,7 +358,104 @@ ol {
   }
 }
 
+@media (max-height: 500px) {
+  ol {
+    font-size: small;
+  }
+
+  #how-to-play button{
+    font-size: x-small;
+    padding: 0.25rem;
+  }
+
+  footer p {
+    margin-bottom: 0.25rem;
+    font-size: small;
+  }
+}
+
 /*----- End of How to Play selection styling-----*/
+
+/*----- Start of styling for quiz pages-----*/
+
+.question-text {
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+div:has(.question-text) {
+  height: fit-content;
+}
+
+div:has(.repeat-audio) {
+  height: fit-content;
+}
+
+.repeat-audio button {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+}
+
+.repeat-audio button :hover {
+  color: #FFD700;
+}
+
+.repeat-audio i {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .repeat-audio button {
+  width: 4rem;
+  height: 4rem;
+  }
+
+  .repeat-audio i {
+  font-size: 2rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .repeat-audio button {
+  width: 2.5rem;
+  height: 2.5rem;
+  }
+
+  .repeat-audio i {
+  font-size: 1rem;
+  }
+
+  .repeat-audio h3 {
+    font-size: medium;
+  }
+}
+
+/*--Colours Page--*/
+
+.colours-answer-selection {
+  border: none;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .colours-answer-selection {
+    height: 8rem;
+    width: 8rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .colours-answer-selection {
+    height: 8rem;
+    width: 8rem;
+  }
+}
+
+/*----- End of styling for quiz pages-----*/
 
 /*----- Start of Footer selection styling-----*/
 

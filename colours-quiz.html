@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/13b3abd37d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="assets/images/little-launch-pad-logo-icon.png">
+    <title>Little Launch Pad</title>
+</head>
+<body>
+    <!-- ==========Start of Header========== -->
+    <header class="d-flex align-items-center justify-content-between p-2">
+        
+        <!-- Home page button-->
+        <a href="./index.html" class="btn circular-btn">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- Logo -->
+        <img src="./assets/images/little-launch-pad-logo.png" alt="Little Launch Pad Logo" class="logo-img">
+
+        <!-- Button to toggle audio -->
+        <div class="circular-btn invisible-placeholder">
+        </div>
+        
+    </header>
+    <!-- ==========End of Header========== -->
+
+    <!-- ==========Start of quiz game========== -->
+     <div class="d-flex justify-content-center">
+        <div class="question-text">
+            <h2>QUESTION TEXT</h2>
+        </div>
+     </div>
+
+     <div class="d-flex justify-content-center">
+        <div class="row repeat-audio align-items-center">
+            <button class="col-4 shadow">
+                <i class="fa-solid fa-ear-listen"></i>
+            </button>
+            <h3 class="col-4">Repeat</h3>
+        </div>
+     </div>
+
+     <!-- Answer section -->
+
+     <div class="container answer-box text-center">
+        <div class="row">
+
+            <div class="col-6 col-lg-3 px-4 py-2">
+                <button class="colours-answer-selection"></button>
+            </div>
+
+            <div class="col-6 col-lg-3 px-4 py-2">
+                <button class="colours-answer-selection"></button>
+            </div>
+
+            <div class="col-6 col-lg-3 px-4 py-2">
+                <button class="colours-answer-selection"></button>
+            </div>
+
+            <div class="col-6 col-lg-3 px-4 py-2">
+                <button class="colours-answer-selection"></button>
+            </div>
+        </div>
+     </div>
+
+    <!-- ==========End of quiz game========== -->
+
+    <!-- Footer across all pages -->
+     <footer class="container-fluid">
+        <div class="row text-center">
+            <div>
+                <p>Contact</p>
+            </div>
+            <div>
+                <a href="https://github.com/edchalk96" class="contact-link" id="gitHubLink">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://discordapp.com/users/chalkieboi96" class="contact-link" id="discordLink">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+            </div>
+        </div>
+     </footer>
+</body>
+</html>
