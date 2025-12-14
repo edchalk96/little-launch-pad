@@ -100,7 +100,6 @@ header i {
 }
 
 #instructions {
-  /* background-color: #F8F8F8; */
   color: #87CEEB;
 }
 
@@ -195,7 +194,7 @@ footer i:hover {
 }
 
     .logo-img {
-      height: 6rem;
+      height: 5rem;
     }
 }
 
@@ -418,6 +417,11 @@ div:has(.repeat-audio) {
 }
 
 @media (max-height: 500px) {
+
+  .question-text h2 {
+    font-size: 1rem;
+  }
+
   .repeat-audio button {
   width: 2.5rem;
   height: 2.5rem;
@@ -428,7 +432,7 @@ div:has(.repeat-audio) {
   }
 
   .repeat-audio h3 {
-    font-size: medium;
+    font-size: 1rem;
   }
 }
 
@@ -450,17 +454,27 @@ div:has(.repeat-audio) {
 
 @media (max-height: 500px) {
   .colours-answer-selection {
-    height: 8rem;
-    width: 8rem;
+    height: 5rem;
+    width: 5rem;
   }
+
+  div:has(.colours-answer-selection) {
+    padding: 0rem 1.5rem 0rem 1.5rem !important;
+  }
+
 }
 
 /*----- End of styling for quiz pages-----*/
 
-/*----- Start of Footer selection styling-----*/
+/*----- Start of Footer styling-----*/
 
 footer a {
   text-decoration: none;
 }
 
-/*----- End of Footer selection styling-----*/
+@media (max-height: 500px) {
+  footer p {
+    margin-bottom: 0;
+  }
+}
+/*----- End of Footer styling-----*/
