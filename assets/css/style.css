@@ -122,8 +122,33 @@ footer i:hover {
   text-shadow: 1px 1px 1px grey;
 }
 
-.answer-selection {
+.colours-answer-selection {
   background-color: #F8F8F8;
+}
+
+.numbers-answer-selection {
+  color: #F8F8F8;
+  text-shadow: 2px 2px 2px #FF7F50;
+}
+
+.shapes-answer-selection {
+  background-color: #F8F8F8;
+}
+
+#shape-selection-1 {
+  color: #FF7F50;
+}
+
+#shape-selection-2 {
+  color: #FFD700;
+}
+
+#shape-selection-3 {
+  color: #98FB98;
+}
+
+#shape-selection-4 {
+  color: #87CEEB;
 }
 
 .repeat-audio {
@@ -136,6 +161,7 @@ footer i:hover {
   color: #F8F8F8;
   text-shadow: 1px 1px 1px grey;
 }
+
 /*----- Start of Header styling-----*/
 
 .circular-btn {
@@ -460,6 +486,60 @@ div:has(.repeat-audio) {
 
   div:has(.colours-answer-selection) {
     padding: 0rem 1.5rem 0rem 1.5rem !important;
+  }
+
+}
+
+/*--Numbers Page--*/
+
+.numbers-answer-selection {
+  background: none;
+  border: none;
+  font-size: 8rem;
+}
+
+@media (max-width: 840px) {
+  .numbers-answer-selection {
+    font-size: 5rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .numbers-answer-selection {
+    font-size: 4rem;
+  }
+
+  div:has(.numbers-answer-selection) {
+    padding: 0rem 1.5rem 0rem 1.5rem !important;
+  }
+
+}
+
+/*--Shapes Page--*/
+
+.shapes-answer-selection {
+  border-radius: 25%
+}
+
+.shapes-answer-selection i {
+  font-size: 8rem;
+  padding: 0 20px 0 20px;
+}
+
+@media (max-width: 575.98px) {
+
+  .shapes-answer-selection i {
+  font-size: 4rem;
+  padding: 0 15px 0 15px;
+  }
+
+}
+
+@media (max-height: 500px) {
+
+  .shapes-answer-selection i {
+  font-size: 3rem;
+  padding: 0 15px 0 15px;
   }
 
 }

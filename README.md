@@ -228,3 +228,7 @@ Colours: <https://www.color-hex.com/color/98fb98> and Ajilian Abbasi, M., Talaei
 Google Gemini was used to create the logo for the project.
 
 Credit to MDN Web Docs for providing a knowledge on various elements within html, css and JavaScript.
+
+Credit to font awesome for icons
+
+Credit to Bootstrap for fro icons plus "html building blocks"
