@@ -187,8 +187,9 @@ Balsamiq was utilized to develop the project's wireframes, which serve as the fo
 Being an initial concept, some aspects were altered during development of the project as well as some minor additions being added. The below list are the amendments and additions made to project, not seen in the wireframes:
 
 - PLACEHOLDER TEXT
+- Deviated slightly with colour scheme for feelings to use the relevant colours associated with that feeling
 
-An afterthough of which orientation would be most beneficial occurred whilst developing the project. Although it will be designed to use in portrait orientation, it will be included in the instructions to use a landscape orientation to the benefit of the child. The orientation shown in the wireframe however were portrait, for smart devices.
+An afterthought of which orientation would be most beneficial occurred whilst developing the project. Although it will be designed to use in portrait orientation, it will be included in the instructions to use a landscape orientation to the benefit of the child. The orientation shown in the wireframe however were portrait, for smart devices.
 
 ### Surface Plane
 

@@ -151,6 +151,26 @@ footer i:hover {
   color: #87CEEB;
 }
 
+.bi-emoji-angry {
+  color: red;
+}
+
+.bi-emoji-astonished {
+  color: black;
+}
+
+.bi-emoji-frown {
+  color: #87CEEB;
+}
+
+.bi-emoji-smile {
+  color: #FFD700;
+}
+
+.bi-emoji-kiss {
+  color: pink;
+}
+
 .repeat-audio {
   color: #f8f8f8;
   text-shadow: 1px 1px 1px grey;
@@ -538,6 +558,35 @@ div:has(.repeat-audio) {
 @media (max-height: 500px) {
 
   .shapes-answer-selection i {
+  font-size: 3rem;
+  padding: 0 15px 0 15px;
+  }
+
+}
+
+/*--Feelings Page--*/
+
+.feelings-answer-selection {
+  border-radius: 25%
+}
+
+.feelings-answer-selection i {
+  font-size: 8rem;
+  padding: 0 20px 0 20px;
+}
+
+@media (max-width: 575.98px) {
+
+  .feelings-answer-selection i {
+  font-size: 4rem;
+  padding: 0 15px 0 15px;
+  }
+
+}
+
+@media (max-height: 500px) {
+
+  .feelings-answer-selection i {
   font-size: 3rem;
   padding: 0 15px 0 15px;
   }
