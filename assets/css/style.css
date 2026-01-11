@@ -244,10 +244,6 @@ footer i:hover {
     }
 }
 
-.invisible-placeholder {
-  visibility: hidden;
-}
-
 /*----- End of Header styling-----*/
 
 /*----- Start of Quiz selection styling-----*/
@@ -464,7 +460,7 @@ div:has(.repeat-audio) {
 
 @media (max-height: 500px) {
 
-  .question-text h2 {
+  #question-heading {
     font-size: 1rem;
   }
 
