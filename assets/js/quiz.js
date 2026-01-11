@@ -2,19 +2,26 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-        //Code to toggle audio on and off with visual representation
-    let audio = true;
-    let audioButton = document.getElementById("audioButton");
-    let icon = document.querySelector(".fa-volume-high");
+    //Code to toggle audio on and off with visual representation | Credit W3 Schools, https://www.w3schools.com/jsref/prop_win_localstorage.asp
+    const audioButton = document.getElementById("audioButton");
+    const icon = document.querySelector(".fa-volume-high");
+    let savedAudio = localStorage.getItem("audioEnabled");
+    let audio = (savedAudio === null) ? true : (savedAudio === "true");
+    updateIcon(audio);
     
     audioButton.addEventListener("click", function () {
         audio = !audio;
-        if (audio === false) {
-            icon.classList.replace("fa-volume-high", "fa-volume-xmark");
-        } else {
-            icon.classList.replace("fa-volume-xmark", "fa-volume-high");
-        }
+        localStorage.setItem("audioEnabled", audio);
+        updateIcon(audio);            
     });
+
+    function updateIcon(state) {
+        if (state) {
+            icon.classList.replace("fa-volume-xmark", "fa-volume-high");
+        } else {
+            icon.classList.replace("fa-volume-high", "fa-volume-xmark");
+        }
+    }
 
     console.log("Script loaded on this page!");
 
