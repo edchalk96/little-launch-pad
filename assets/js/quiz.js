@@ -12,7 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
     audioButton.addEventListener("click", function () {
         audio = !audio;
         localStorage.setItem("audioEnabled", audio);
-        updateIcon(audio);            
+        updateIcon(audio);  
+        if (!audio) {
+            window.speechSynthesis.cancel();
+        }    
     });
 
     function updateIcon(state) {
@@ -23,7 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    console.log("Script loaded on this page!");
+    //Section for repeating question
+    const repeatButton = document.getElementById("repeat-button");
+
+    repeatButton.addEventListener("click", function() {
+        speak()
+    })
 
     //Section to run the quiz
 
@@ -31,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function runQuiz() {
-    
-    console.log(window.location.pathname)
 
     //Credit to Thomas Amindsen, stackoverflow + W3 schools | https://stackoverflow.com/questions/50692992/how-to-run-a-javascript-function-only-on-a-certain-page-or-pages + https://www.w3schools.com/js/js_window_location.asp
     if (window.location.pathname == "/colours-quiz.html") {
@@ -46,32 +52,44 @@ function runQuiz() {
     }
 }
 
-function repeatAudio () {
-    
-}
-
 let answer;
 
 //Section for colours quiz
 
-const colourOptions = ["Red", "Yellow", "Blue", "Green", "Orange", "Purple", "Pink", "Brown", "Black", "White"];
-
-
 function runColours() {
 
-    //Random numbers to select a colour from the array
-    let num1 = Math.floor(Math.random() * 10);
-    let num2 = Math.floor(Math.random() * 10);
-    let num3 = Math.floor(Math.random() * 10);
-    let num4 = Math.floor(Math.random() * 10);
+    //Array for the 4 possible options; | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+    const options = document.querySelectorAll(".colours-answer-selection");
+    const answerPosition = Math.floor(Math.random() * options.length);
 
-    //Random number between 1 and 4 for placement
-    let num5 = Math.ceil(Math.random() * 4);
+    let colourOptions = ["Red", "Yellow", "Blue", "Green", "Orange", "Purple", "Pink", "Black", "White"];
 
-    //Selecting answer
+    //Randomly selecting correct answer
+    let num1 = Math.floor(Math.random() * 9);
     answer = colourOptions[num1];
 
+    //Assigning answer and rnadom colours to each option - Credit to MDN for information on splicng an array | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced
+
+    if (num1 > -1) {
+        colourOptions = colourOptions.toSpliced(num1, 1);
+    }
+
+    for (let i = 0; i < options.length; i++) {
+        if (i === answerPosition) {
+            options[i].style.backgroundColor = answer;
+        } else {
+            const randomColour = Math.floor(Math.random() * colourOptions.length);
+            options[i].style.backgroundColor = colourOptions[randomColour];
+
+            colourOptions = colourOptions.toSpliced(randomColour, 1);
+        }
+    }
+
     generateQuestion();
+
+    // if (userAnswer === answer) {
+
+    // }
 
 }
 
@@ -93,7 +111,7 @@ function runFeelings() {
 }
 
 function correctAnswer () {
-
+    
 }
 
 function incorrectAnswer () {
@@ -108,35 +126,36 @@ function answerNudge() {
 
 function speak() {
 
-    const synth = window.speechSynthesis;
-    const textToSpeak = document.getElementById("question-heading").innerText;
+    const isAudioEnabled = localStorage.getItem("audioEnabled") !== "false";
 
-    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    if (isAudioEnabled) {
+        const synth = window.speechSynthesis;
+        const textToSpeak = document.getElementById("question-heading").innerText;
 
-    utterance.pitch = 1.3;
-    utterance.rate = 0.8;
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
 
-    const setVoice = () => {
-        const voices = synth.getVoices();
-        const selectedVoice = voices.find(voice =>
-            voice.name === "Google UK English Female" ||
-            voice.name.includes("en-GB") && voice.name.includes("Female")
-    );
+        utterance.pitch = 1.3;
+        utterance.rate = 0.8;
 
-    if (selectedVoice) {
-        utterance.voice = selectedVoice;
-        console.log(selectedVoice.name)
-    } else {
-        console.warn("Target voice not found");
-    }
+        const setVoice = () => {
+            const voices = synth.getVoices();
+            const selectedVoice = voices.find(voice =>
+                voice.name === "Google UK English Female" ||
+                voice.name.includes("en-GB") && voice.name.includes("Female")
+        );
 
-    synth.speak(utterance);
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+        } 
 
-    };
+        synth.speak(utterance);
 
-    if (synth.getVoices().length === 0) {
-        synth.onvoiceschanged = setVoice;
-    } else {
-        setVoice();
+        };
+
+        if (synth.getVoices().length === 0) {
+            synth.onvoiceschanged = setVoice;
+        } else {
+            setVoice();
+        }
     }
 }
