@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     runQuiz();
 });
 
+//Check for which quiz to run
 function runQuiz() {
 
     //Credit to Thomas Amindsen, stackoverflow + W3 schools | https://stackoverflow.com/questions/50692992/how-to-run-a-javascript-function-only-on-a-certain-page-or-pages + https://www.w3schools.com/js/js_window_location.asp
@@ -52,14 +53,24 @@ function runQuiz() {
     }
 }
 
+//Global scope variables
 let answer;
+
+    //Array for the 4 possible options; | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+const options = document.querySelectorAll(".answer-selection");
+
+let userAnswer;
+let incorrect = 0;
+    //Audio feedback | Credit to Linial in stackoverflow - https://stackoverflow.com/questions/25095173/playing-a-audio-file-in-an-onclick-event
+let audioElement = document.createElement("audio")
+
+const isAudioEnabled = localStorage.getItem("audioEnabled") !== "false";
+
 
 //Section for colours quiz
 
 function runColours() {
 
-    //Array for the 4 possible options; | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
-    const options = document.querySelectorAll(".colours-answer-selection");
     const answerPosition = Math.floor(Math.random() * options.length);
 
     let colourOptions = ["Red", "Yellow", "Blue", "Green", "Orange", "Purple", "Pink", "Black", "White"];
@@ -68,7 +79,7 @@ function runColours() {
     let num1 = Math.floor(Math.random() * 9);
     answer = colourOptions[num1];
 
-    //Assigning answer and rnadom colours to each option - Credit to MDN for information on splicng an array | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced
+    //Assigning answer and random colours to each option - Credit to MDN for information on splicng an array | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced
 
     if (num1 > -1) {
         colourOptions = colourOptions.toSpliced(num1, 1);
@@ -77,20 +88,31 @@ function runColours() {
     for (let i = 0; i < options.length; i++) {
         if (i === answerPosition) {
             options[i].style.backgroundColor = answer;
+            options[i].setAttribute("data-answer", answer);
         } else {
             const randomColour = Math.floor(Math.random() * colourOptions.length);
             options[i].style.backgroundColor = colourOptions[randomColour];
+            options[i].setAttribute("data-answer", colourOptions[randomColour]);
 
             colourOptions = colourOptions.toSpliced(randomColour, 1);
         }
     }
 
     generateQuestion();
+}
 
-    // if (userAnswer === answer) {
+//Checking users answer on click of an option
+$(".answer-selection").click(function(){
+        userAnswer = $(this).attr("data-answer")
+        checkAnswer()
+})
 
-    // }
-
+function checkAnswer() {
+    if (userAnswer === answer) {
+        correctAnswer();
+    } else {
+        incorrectAnswer();
+    }
 }
 
 function generateQuestion() {
@@ -111,22 +133,42 @@ function runFeelings() {
 }
 
 function correctAnswer () {
-    
+    console.log("correct answer")
+
+    if (isAudioEnabled) {
+        audioElement.setAttribute("src", "/assets/sounds/rocket-whoosh.mp3")
+        audioElement.play();
+    }    
+
+    //Credit to W3 Schools - https://www.w3schools.com/js/js_timing.asp
+    setTimeout(runQuiz, 3000);
 }
 
 function incorrectAnswer () {
 
+    incorrect++;
+
+    if (incorrect >= 3) {
+        answerNudge();
+    }
+
+    if (isAudioEnabled && incorrect < 3) {
+        audioElement.setAttribute("src", "/assets/sounds/cowbell-sharp-hit.mp3");
+        audioElement.play();
+    }  
 }
 
 function answerNudge() {
 
+    if (isAudioEnabled) {
+        audioElement.setAttribute("src", "/assets/sounds/cartoon-close-bells.mp3");
+        audioElement.play();
+    }  
 }
 
 //Code to gemerate text-to-speech using Web Speech API | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 
 function speak() {
-
-    const isAudioEnabled = localStorage.getItem("audioEnabled") !== "false";
 
     if (isAudioEnabled) {
         const synth = window.speechSynthesis;
