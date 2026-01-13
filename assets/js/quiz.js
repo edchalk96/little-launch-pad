@@ -2,30 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    //Code to toggle audio on and off with visual representation | Credit W3 Schools, https://www.w3schools.com/jsref/prop_win_localstorage.asp
-    const audioButton = document.getElementById("audioButton");
-    const icon = document.querySelector(".fa-volume-high");
-    let savedAudio = localStorage.getItem("audioEnabled");
-    let audio = (savedAudio === null) ? true : (savedAudio === "true");
-    updateIcon(audio);
-    
-    audioButton.addEventListener("click", function () {
-        audio = !audio;
-        localStorage.setItem("audioEnabled", audio);
-        updateIcon(audio);  
-        if (!audio) {
-            window.speechSynthesis.cancel();
-        }    
-    });
-
-    function updateIcon(state) {
-        if (state) {
-            icon.classList.replace("fa-volume-xmark", "fa-volume-high");
-        } else {
-            icon.classList.replace("fa-volume-high", "fa-volume-xmark");
-        }
-    }
-
     //Section for repeating question
     const repeatButton = document.getElementById("repeat-button");
 
@@ -53,6 +29,32 @@ function runQuiz() {
     }
 }
 
+//Code to toggle audio on and off with visual representation | Credit W3 Schools, https://www.w3schools.com/jsref/prop_win_localstorage.asp
+const audioButton = document.getElementById("audioButton");
+const icon = document.querySelector(".fa-volume-high");
+let savedAudio = localStorage.getItem("audioEnabled");
+let audio = (savedAudio === null) ? true : (savedAudio === "true");
+updateIcon(audio);
+let isAudioEnabled = localStorage.getItem("audioEnabled");;
+
+audioButton.addEventListener("click", function () {
+    audio = !audio;
+    localStorage.setItem("audioEnabled", audio);
+    updateIcon(audio);  
+    if (!audio) {
+        window.speechSynthesis.cancel();
+    }    
+    isAudioEnabled = localStorage.getItem("audioEnabled");
+});
+
+function updateIcon(state) {
+    if (state) {
+        icon.classList.replace("fa-volume-xmark", "fa-volume-high");
+    } else {
+        icon.classList.replace("fa-volume-high", "fa-volume-xmark");
+    }
+}
+
 //Global scope variables
 let answer;
 
@@ -64,12 +66,11 @@ let incorrect = 0;
     //Audio feedback | Credit to Linial in stackoverflow - https://stackoverflow.com/questions/25095173/playing-a-audio-file-in-an-onclick-event
 let audioElement = document.createElement("audio")
 
-const isAudioEnabled = localStorage.getItem("audioEnabled") !== "false";
-
-
 //Section for colours quiz
 
 function runColours() {
+
+    console.log()
 
     const answerPosition = Math.floor(Math.random() * options.length);
 
@@ -133,9 +134,8 @@ function runFeelings() {
 }
 
 function correctAnswer () {
-    console.log("correct answer")
 
-    if (isAudioEnabled) {
+    if (isAudioEnabled === "true") {
         audioElement.setAttribute("src", "/assets/sounds/rocket-whoosh.mp3")
         audioElement.play();
     }    
@@ -152,25 +152,30 @@ function incorrectAnswer () {
         answerNudge();
     }
 
-    if (isAudioEnabled && incorrect < 3) {
+    if (isAudioEnabled === "true" && incorrect < 3) {
         audioElement.setAttribute("src", "/assets/sounds/cowbell-sharp-hit.mp3");
         audioElement.play();
-    }  
+    }
+    
+    // incorrectAnimation();
 }
+
+// setTimeout()
 
 function answerNudge() {
 
-    if (isAudioEnabled) {
+    if (isAudioEnabled === "true") {
         audioElement.setAttribute("src", "/assets/sounds/cartoon-close-bells.mp3");
         audioElement.play();
     }  
+
 }
 
 //Code to gemerate text-to-speech using Web Speech API | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 
 function speak() {
 
-    if (isAudioEnabled) {
+    if (isAudioEnabled === "true") {
         const synth = window.speechSynthesis;
         const textToSpeak = document.getElementById("question-heading").innerText;
 
