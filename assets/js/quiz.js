@@ -57,20 +57,20 @@ function updateIcon(state) {
 
 //Global scope variables
 let answer;
+let correctAnswerSelection;
+let userAnswer;
+let userAnswerSelection;
+let incorrect = 0;
 
-    //Array for the 4 possible options; | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+//Array for the 4 possible options; | Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 const options = document.querySelectorAll(".answer-selection");
 
-let userAnswer;
-let incorrect = 0;
-    //Audio feedback | Credit to Linial in stackoverflow - https://stackoverflow.com/questions/25095173/playing-a-audio-file-in-an-onclick-event
+//Audio feedback | Credit to Linial in stackoverflow - https://stackoverflow.com/questions/25095173/playing-a-audio-file-in-an-onclick-event
 let audioElement = document.createElement("audio")
 
 //Section for colours quiz
 
 function runColours() {
-
-    console.log()
 
     const answerPosition = Math.floor(Math.random() * options.length);
 
@@ -90,6 +90,7 @@ function runColours() {
         if (i === answerPosition) {
             options[i].style.backgroundColor = answer;
             options[i].setAttribute("data-answer", answer);
+            correctAnswerSelection = options[i];
         } else {
             const randomColour = Math.floor(Math.random() * colourOptions.length);
             options[i].style.backgroundColor = colourOptions[randomColour];
@@ -103,14 +104,15 @@ function runColours() {
 }
 
 //Checking users answer on click of an option
-$(".answer-selection").click(function(){
+$(".answer-selection").click(function(event){
         userAnswer = $(this).attr("data-answer")
-        checkAnswer()
+        userAnswerSelection = $(this);
+        checkAnswer(event);
 })
 
-function checkAnswer() {
+function checkAnswer(event) {
     if (userAnswer === answer) {
-        correctAnswer();
+        correctAnswer(event);
     } else {
         incorrectAnswer();
     }
@@ -133,7 +135,9 @@ function runFeelings() {
     console.log("Feelings running");
 }
 
-function correctAnswer () {
+function correctAnswer (event) {
+
+    showCoords(event)
 
     if (isAudioEnabled === "true") {
         audioElement.setAttribute("src", "/assets/sounds/rocket-whoosh.mp3")
@@ -144,9 +148,43 @@ function correctAnswer () {
     setTimeout(runQuiz, 3000);
 }
 
+//Credit to jackhals (reddit) and MDN- https://jsfiddle.net/320ch6um/ + https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+function showCoords(event) {
+
+    //Creating the img element and assigning it the rocket image
+    let rocketImage = document.createElement("img");
+    rocketImage.src = "/assets/images/positive-feedback-rocket.png";
+
+    //Adding CSS styling to the new element including the position relative to the click event
+    rocketImage.style.position = "fixed";
+    rocketImage.style.left = (event.clientX - 50) + "px";
+    rocketImage.style.top = (event.clientY - 50) + "px";
+    rocketImage.style.width = "200px";
+    rocketImage.style.zIndex = "1000";
+
+    //Adds the created css class and appends the created img element to the selected answer
+    rocketImage.classList.add("rocket-animation");
+    document.body.appendChild(rocketImage);
+
+    //Removes the rocket after animation has finished
+    setTimeout(() => {
+        rocketImage.remove();
+    }, 2500);
+}
+
+
+//
 function incorrectAnswer () {
 
     incorrect++;
+
+    userAnswerSelection.removeClass("incorrect-animation")
+
+    userAnswerSelection.addClass("incorrect-animation");
+    
+    userAnswerSelection.one("animationend", function() {
+        userAnswerSelection.removeClass("incorrect-animation");
+    })
 
     if (incorrect >= 3) {
         answerNudge();
@@ -156,13 +194,16 @@ function incorrectAnswer () {
         audioElement.setAttribute("src", "/assets/sounds/cowbell-sharp-hit.mp3");
         audioElement.play();
     }
-    
-    // incorrectAnimation();
 }
 
-// setTimeout()
-
 function answerNudge() {
+    
+    correctAnswerSelection.classList.remove("answer-nudge")
+
+    correctAnswerSelection.classList.add("answer-nudge");
+    setTimeout(() => {
+        correctAnswerSelection.classList.remove("answer-nudge")
+    }, 2000)
 
     if (isAudioEnabled === "true") {
         audioElement.setAttribute("src", "/assets/sounds/cartoon-close-bells.mp3");
