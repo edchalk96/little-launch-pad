@@ -72,12 +72,12 @@ let audioElement = document.createElement("audio")
 
 function runColours() {
 
-    const answerPosition = Math.floor(Math.random() * options.length);
-
+    let num1 = Math.floor(Math.random() * 9);
+    let answerPosition = Math.floor(Math.random() * options.length);
     let colourOptions = ["Red", "Yellow", "Blue", "Green", "Orange", "Purple", "Pink", "Black", "White"];
 
     //Randomly selecting correct answer
-    let num1 = Math.floor(Math.random() * 9);
+    
     answer = colourOptions[num1];
 
     //Assigning answer and random colours to each option - Credit to MDN for information on splicng an array | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced
@@ -100,7 +100,55 @@ function runColours() {
         }
     }
 
-    generateQuestion();
+    const quizType = "colour";
+
+    generateQuestion(quizType);
+}
+
+function runNumbers() {
+
+    let num1 = Math.floor(Math.random() * 9);
+    let answerPosition = Math.floor(Math.random() * options.length);    
+    let numberOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+    //Randomly selecting correct answer
+    
+    answer = numberOptions[num1];
+
+    //Assigning answer and random numbers to each option
+
+    if (num1 > -1) {
+        numberOptions = numberOptions.toSpliced(num1, 1);
+    }
+
+    for (let i = 0; i < options.length; i++) {
+        if (i === answerPosition) {
+            options[i].firstElementChild.removeAttribute("class");
+            options[i].firstElementChild.classList.add("fa-solid", `fa-${answer}`);
+            correctAnswerSelection = options[i];
+            options[i].setAttribute("data-answer", answer);
+        } else {
+            const randomNumber = Math.floor(Math.random() * numberOptions.length);
+            let randomNumberText = numberOptions[randomNumber];
+            options[i].firstElementChild.removeAttribute("class");
+            options[i].firstElementChild.classList.add("fa-solid", `fa-${randomNumberText}`);
+            options[i].setAttribute("data-answer", numberOptions[randomNumber]);
+
+            numberOptions = numberOptions.toSpliced(randomNumber, 1);
+        }
+    }
+
+    const quizType = "number";
+
+    generateQuestion(quizType);
+}
+
+function runShapes() {
+    console.log("Shapes running");
+}
+
+function runFeelings() {
+    console.log("Feelings running");
 }
 
 //Checking users answer on click of an option
@@ -118,21 +166,9 @@ function checkAnswer(event) {
     }
 }
 
-function generateQuestion() {
-    document.getElementById("question-heading").innerHTML = `Which colour is ${answer}?`;
+function generateQuestion(quizType) {
+    document.getElementById("question-heading").innerHTML = `Which ${quizType} is ${answer}?`;
     speak()
-}
-
-function runNumbers() {
-    console.log("Numbers running");
-}
-
-function runShapes() {
-    console.log("Shapes running");
-}
-
-function runFeelings() {
-    console.log("Feelings running");
 }
 
 function correctAnswer (event) {
@@ -142,7 +178,9 @@ function correctAnswer (event) {
     if (isAudioEnabled === "true") {
         audioElement.setAttribute("src", "/assets/sounds/rocket-whoosh.mp3")
         audioElement.play();
-    }    
+    }
+    
+    incorrect = 0;
 
     //Credit to W3 Schools - https://www.w3schools.com/js/js_timing.asp
     setTimeout(runQuiz, 3000);
@@ -172,8 +210,6 @@ function showCoords(event) {
     }, 2500);
 }
 
-
-//
 function incorrectAnswer () {
 
     incorrect++;
