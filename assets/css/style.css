@@ -127,8 +127,8 @@ footer i:hover {
 }
 
 .numbers-answer-selection {
-  color: #F8F8F8;
-  text-shadow: 2px 2px 2px #FF7F50;
+  color: #FF7F50;
+  text-shadow: 4px 4px 4px #F8F8F8;
 }
 
 .shapes-answer-selection {
