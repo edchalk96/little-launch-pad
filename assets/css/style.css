@@ -655,7 +655,7 @@ footer a {
 
 /*--Correct answer nudge - Credit to Nelle de Jones - https://codepen.io/nelledejones/pen/gOOPWrK --*/
 .answer-nudge {
-  animation: nudge 1.5s ease 1;
+  animation: nudge 1s ease 2;
 }
 
 @keyframes nudge {

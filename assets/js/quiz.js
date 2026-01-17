@@ -152,14 +152,19 @@ function runFeelings() {
 }
 
 //Checking users answer on click of an option
+let animationRunning = false;
+
 $(".answer-selection").click(function(event){
-        userAnswer = $(this).attr("data-answer")
-        userAnswerSelection = $(this);
-        checkAnswer(event);
+    if (animationRunning) return; //If the animation is running, this will prevent another click event triggering another animation before the quiz has reloaded
+
+    userAnswer = $(this).attr("data-answer")
+    userAnswerSelection = $(this);
+    checkAnswer(event);
 })
 
 function checkAnswer(event) {
     if (userAnswer === answer) {
+        animationRunning = true;
         correctAnswer(event);
     } else {
         incorrectAnswer();
@@ -171,7 +176,7 @@ function generateQuestion(quizType) {
     speak()
 }
 
-function correctAnswer (event) {
+function correctAnswer(event) {
 
     showCoords(event)
 
@@ -182,8 +187,11 @@ function correctAnswer (event) {
     
     incorrect = 0;
 
-    //Credit to W3 Schools - https://www.w3schools.com/js/js_timing.asp
-    setTimeout(runQuiz, 3000);
+    //Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout 
+    setTimeout(() => {
+        runQuiz();
+        animationRunning = false;
+    }, 2500)
 }
 
 //Credit to jackhals (reddit) and MDN- https://jsfiddle.net/320ch6um/ + https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
