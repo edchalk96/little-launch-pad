@@ -74,7 +74,7 @@ function runColours() {
 
     let num1 = Math.floor(Math.random() * 9);
     let answerPosition = Math.floor(Math.random() * options.length);
-    let colourOptions = ["Red", "Yellow", "Blue", "Green", "Orange", "Purple", "Pink", "Black", "White"];
+    let colourOptions = ["red", "yellow", "blue", "green", "orange", "purple", "pink", "black", "white"];
 
     //Randomly selecting correct answer
     
@@ -100,7 +100,7 @@ function runColours() {
         }
     }
 
-    const quizType = "colour";
+    const quizType = "colour is";
 
     generateQuestion(quizType);
 }
@@ -138,17 +138,93 @@ function runNumbers() {
         }
     }
 
-    const quizType = "number";
+    const quizType = "number is";
 
     generateQuestion(quizType);
 }
 
 function runShapes() {
-    console.log("Shapes running");
+    
+    let num1 = Math.floor(Math.random() * 9);
+    let answerPosition = Math.floor(Math.random() * options.length);    
+    let shapeOptions = ["circle", "square", "triangle", "star", "diamond", "hexagon", "pentagon", "heart", "egg"];
+
+    //Randomly selecting correct answer
+    
+    answer = shapeOptions[num1];
+
+    //Assigning answer and random numbers to each option
+
+    if (num1 > -1) {
+        shapeOptions = shapeOptions.toSpliced(num1, 1);
+    }
+
+    for (let i = 0; i < options.length; i++) {
+        if (i === answerPosition) {
+            options[i].firstElementChild.removeAttribute("class");
+            options[i].firstElementChild.classList.add("bi", `bi-${answer}`);
+            correctAnswerSelection = options[i];
+            options[i].setAttribute("data-answer", answer);
+        } else {
+            const randomShape = Math.floor(Math.random() * shapeOptions.length);
+            let randomShapeText = shapeOptions[randomShape];
+            options[i].firstElementChild.removeAttribute("class");
+            options[i].firstElementChild.classList.add("bi", `bi-${randomShapeText}`);
+            options[i].setAttribute("data-answer", shapeOptions[randomShape]);
+
+            shapeOptions = shapeOptions.toSpliced(randomShape, 1);
+        }
+    }
+
+    const quizType = "shape is";
+
+    generateQuestion(quizType);
 }
 
 function runFeelings() {
-    console.log("Feelings running");
+    
+    let num1 = Math.floor(Math.random() * 5);
+    let answerPosition = Math.floor(Math.random() * options.length);    
+    let feelingOptions = ["angry", "calm", "happy", "love", "sad","scared"];
+
+    //Randomly selecting correct answer
+    
+    answer = feelingOptions[num1];
+
+    //Assigning answer and random numbers to each option
+
+    if (num1 > -1) {
+        feelingOptions = feelingOptions.toSpliced(num1, 1);
+    }
+
+    //Credit to GeeksForGeeks for image creation - https://www.geeksforgeeks.org/javascript/how-to-create-an-image-element-dynamically-using-javascript/
+    for (let i = 0; i < options.length; i++) {
+        if (i === answerPosition) {
+            options[i].innerHTML = "";
+            let feelingImg = document.createElement("img");
+            feelingImg.src = `./assets/images/${answer}-feeling.png`;
+            feelingImg.alt = `${answer}-emoji`;
+            options[i].appendChild(feelingImg);
+            correctAnswerSelection = options[i];
+            options[i].setAttribute("data-answer", answer);
+        } else {
+            options[i].innerHTML = "";
+            const randomFeeling = Math.floor(Math.random() * feelingOptions.length);
+            let randomFeelingText = feelingOptions[randomFeeling];
+            let feelingImg = document.createElement("img");
+            feelingImg.src = `./assets/images/${randomFeelingText}-feeling.png`;
+            feelingImg.alt = `${randomFeeling}-emoji`;
+            options[i].appendChild(feelingImg);
+            options[i].setAttribute("data-answer", feelingOptions[randomFeeling]);
+
+            feelingOptions = feelingOptions.toSpliced(randomFeeling, 1);
+        }
+    }
+
+    //"face is feeling" is being used here in place of "feeling" for it to read better to the user
+    const quizType = "face is feeling";
+
+    generateQuestion(quizType);
 }
 
 //Checking users answer on click of an option
@@ -172,7 +248,7 @@ function checkAnswer(event) {
 }
 
 function generateQuestion(quizType) {
-    document.getElementById("question-heading").innerHTML = `Which ${quizType} is ${answer}?`;
+    document.getElementById("question-heading").innerHTML = `Which ${quizType} ${answer}?`;
     speak()
 }
 
