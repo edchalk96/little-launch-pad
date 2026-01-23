@@ -16,25 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
 function runQuiz() {
 
     //Credit to Thomas Amindsen, stackoverflow + W3 schools | https://stackoverflow.com/questions/50692992/how-to-run-a-javascript-function-only-on-a-certain-page-or-pages + https://www.w3schools.com/js/js_window_location.asp
-    if (window.location.pathname == "/little-launch-pad/colours-quiz.html") {
+   if (window.location.pathname == "./colours-quiz.html") {
         runColours();
-    } else if (window.location.pathname == "/little-launch-pad/numbers-quiz.html") {
+    } else if (window.location.pathname == "./numbers-quiz.html") {
         runNumbers();
-    } else if (window.location.pathname == "/little-launch-pad/shapes-quiz.html") {
+    } else if (window.location.pathname == "./shapes-quiz.html") {
         runShapes();
-    } else if (window.location.pathname == "/little-launch-pad/feelings-quiz.html") {
-        runFeelings();
-    } else if (window.location.pathname == "/colours-quiz.html") {
-        runColours();
-    } else if (window.location.pathname == "/numbers-quiz.html") {
-        runNumbers();
-    } else if (window.location.pathname == "/shapes-quiz.html") {
-        runShapes();
-    } else if (window.location.pathname == "/feelings-quiz.html") {
+    } else if (window.location.pathname == "./feelings-quiz.html") {
         runFeelings();
     } else {
         console.log("No quiz found");
-        console.log(window.location.pathname);
     }
 }
 
@@ -266,7 +257,7 @@ function correctAnswer(event) {
     showCoords(event)
 
     if (isAudioEnabled === "true") {
-        audioElement.setAttribute("src", "/assets/sounds/rocket-whoosh.mp3")
+        audioElement.setAttribute("src", "./assets/sounds/rocket-whoosh.mp3")
         audioElement.play();
     }
     
@@ -284,7 +275,7 @@ function showCoords(event) {
 
     //Creating the img element and assigning it the rocket image
     let rocketImage = document.createElement("img");
-    rocketImage.src = "/assets/images/positive-feedback-rocket.png";
+    rocketImage.src = "./assets/images/positive-feedback-rocket.png";
 
     //Adding CSS styling to the new element including the position relative to the click event
     rocketImage.style.position = "fixed";
@@ -320,7 +311,7 @@ function incorrectAnswer () {
     }
 
     if (isAudioEnabled === "true" && incorrect < 3) {
-        audioElement.setAttribute("src", "/assets/sounds/cowbell-sharp-hit.mp3");
+        audioElement.setAttribute("src", "./assets/sounds/cowbell-sharp-hit.mp3");
         audioElement.play();
     }
 }
@@ -335,7 +326,7 @@ function answerNudge() {
     }, 2000)
 
     if (isAudioEnabled === "true") {
-        audioElement.setAttribute("src", "/assets/sounds/cartoon-close-bells.mp3");
+        audioElement.setAttribute("src", "./assets/sounds/cartoon-close-bells.mp3");
         audioElement.play();
     }  
 
