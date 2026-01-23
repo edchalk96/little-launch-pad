@@ -2,16 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    runQuiz();
+
     //Section for repeating question
     const repeatButton = document.getElementById("repeat-button");
 
     repeatButton.addEventListener("click", function() {
         speak()
     })
-
-    //Section to run the quiz
-
-    runQuiz();
 });
 
 //Check for which quiz to run
@@ -26,6 +24,9 @@ function runQuiz() {
         runShapes();
     } else if (window.location.pathname == "/feelings-quiz.html") {
         runFeelings();
+    } else {
+        console.log("No quiz found");
+        console.log(window.location.pathname);
     }
 }
 
