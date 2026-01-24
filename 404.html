@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/13b3abd37d.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="assets/images/little-launch-pad-logo-icon.png">
+    <title>Error 404 - Little Launch Pad</title>
+</head>
+<body>
+    <!-- ==========Start of Header========== -->
+    <header class="d-flex align-items-center justify-content-between p-2">
+        
+        <!-- Home page button-->
+        <a href="./index.html" class="btn circular-btn">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- Logo -->
+        <img src="./assets/images/little-launch-pad-logo.png" alt="Little Launch Pad Logo" class="logo-img">
+
+        <!-- Button to toggle audio -->
+        <button class="btn circular-btn" id="audioButton">
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+        
+    </header>
+    <!-- ==========End of Header========== -->
+
+    <!--Credit to https://www.udacity.com/blog/2021/03/creating-an-html-404-error-web-page.html for error 404 information-->
+    <!-- ==========Start of 404 Message========== -->
+    <div class="container text-center my-5 error404">
+        <h1 class="display-4">404 - Page Not Found</h1>
+        <p>Oops! The page you're looking for doesn't exist.</p>
+        <a href="./index.html" class="btn mt-3">Return to Home</a>
+    </div>
+    <!-- ==========End of 404 Message========== -->
+</body>
+</html>

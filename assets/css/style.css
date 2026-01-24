@@ -676,3 +676,29 @@ footer a {
 }
 
 /*----- End of Animations-----*/
+
+/*-----Error 404 Page Styling-----*/
+
+.error404 h1 {
+  color: #f8f8f8;
+  text-shadow: 2px 2px 2px #FF7F50;
+}
+
+.error404 p {
+  color: #f8f8f8;
+  text-shadow: 1px 1px 1px #FF7F50;
+  font-size: 1.5rem;
+}
+
+.error404 a {
+  text-decoration: none;
+  color: #FF7F50;
+  background-color: #f8f8f8;
+  font-size: 1.5rem;
+}
+
+.error404 a:hover {
+  text-decoration: underline;
+  background-color: none;
+  color: #f8f8f8;
+}
