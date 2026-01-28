@@ -7,11 +7,11 @@ body {
 }
 
 p {
-  font-family: Varela Round, sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 ol {
-  font-family: Varela Round, sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 /*-----Colours-----*/
@@ -23,7 +23,6 @@ body {
 
 .circular-btn {
   background-color: #F8F8F8;
-  border-color: #F8F8F8;
 }
 
 header i {
@@ -266,45 +265,53 @@ footer i:hover {
 a:has(#colours-link) :hover {
   border-style: solid;
   border-color: #87CEEB;
-  h2 {
-    border-style: none;
-  }
-  i {
-    border-style: none;
-  }
+}
+
+a:has(#colours-link) :hover h2 {
+  border-style: none;
+}
+
+a:has(#colours-link) :hover i {
+  border-style: none;
 }
 
 a:has(#numbers-link) :hover {
   border-style: solid;
   border-color: #FFD700;
-  h2 {
-    border-style: none;
-  }
-  i {
-    border-style: none;
-  }
+}
+
+a:has(#numbers-link) :hover h2 {
+  border-style: none;
+}
+
+a:has(#numbers-link) :hover i {
+  border-style: none;
 }
 
 a:has(#shapes-link) :hover {
   border-style: solid;
   border-color: #FF7F50;
-  h2 {
-    border-style: none;
-  }
-  i {
-    border-style: none;
-  }
+}
+
+a:has(#shapes-link) :hover h2 {
+  border-style: none;
+}
+
+a:has(#shapes-link) :hover i {
+  border-style: none;
 }
 
 a:has(#feelings-link) :hover {
   border-style: solid;
   border-color: #98FB98;
-  h2 {
-    border-style: none;
-  }
-  i {
-    border-style: none;
-  }
+}
+
+a:has(#feelings-link) :hover h2 {
+  border-style: none;
+}
+
+a:has(#feelings-link) :hover i {
+  border-style: none;
 }
 
 h2 :hover {
@@ -699,6 +706,6 @@ footer a {
 
 .error404 a:hover {
   text-decoration: underline;
-  background-color: none;
+  background: none;
   color: #f8f8f8;
 }
