@@ -264,6 +264,29 @@ The W3C Markup and CSS Validator Services were utilized to validate the codebase
 
 JSHint was utilized to audit the JavaScript code for potential errors and quality issues. The analysis confirmed the code is functionally sound; the only remaining "warnings" are for undefined variables associated with jQuery and the Web Speech API. These are expected, as they are external global objects that JSHint does not natively recognize without specific configuration. [Result](./assets/testing/jshint-test.png)
 
+### User Story testing from UX Section
+
+### Further Testing
+
+- The quiz was tested across a variety of web browsers including:
+  - Google Chrome
+  - Microsoft Edge
+  - Mozilla Firefox
+  - Opera
+  - Safari
+- Chrome Developer Tools
+  - Throughout development, the project was rigorously tested using DevTools to ensure a seamless responsive experience. This included using emulators to verify layouts across generic screen sizes in both portrait and landscape orientations.
+- Target Demographic Testing
+  - Once the core mechanics were functional, I conducted direct user testing with my two-year-old son. This provided invaluable insight into how a young user interacts with the quiz, helping to identify bugs and refine the user experience.
+- Lighthouse
+  - Lighthouse was utilized to assess the project's performance, accessibility, and best practices, implementing necessary optimizations to ensure a fast and efficient load time.
+
+  **Home Page**
+
+![Lighthouse testing - Home page](./assets/testing/lighthouse-home-page.png)
+
+- As can be seen by the above lighthouse output, the main issue is accessibility. This is largely down to a lack of accesible names and the inclusion of alt text within links and logos. The other issues with accessibility were the contrast ratio in colours for some elements compared to the background as well as the links in the footer contact section not being large enough. The later of which was done on purpose to prevent accidental clicking of the target user. After some amendments based on this audit report, an improved accessibility score can be seen below.
+
 ---
 
 ## Deployment
