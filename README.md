@@ -251,6 +251,19 @@ Similar to the header, the footer maintains a minimalist design. As these elemen
 
 ## Testing
 
+The W3C Markup and CSS Validator Services were utilized to validate the codebase across all pages. This process ensured full compliance with industry standards and a high-quality, error-free final product.
+
+- [W3C Markup Validator](https://validator.w3.org/)
+  - Home page - [Result](./assets/testing/w3c-home-page-test.png)
+  - Colours quiz - [Result](./assets/testing/w3c-colours-quiz-test.png)
+  - Numbers quiz - [Result](./assets/testing/w3c-numbers-quiz-test.png)
+  - Shapes quiz - [Result](./assets/testing/w3c-shapes-quiz-test.png)
+  - Feelings quiz - [Result](./assets/testing/w3c-feelings-quiz-test.png)
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Result](./assets/testing/w3c-css-test.png)
+
+JSHint was utilized to audit the JavaScript code for potential errors and quality issues. The analysis confirmed the code is functionally sound; the only remaining "warnings" are for undefined variables associated with jQuery and the Web Speech API. These are expected, as they are external global objects that JSHint does not natively recognize without specific configuration. [Result](./assets/testing/jshint-test.png)
+
 ---
 
 ## Deployment

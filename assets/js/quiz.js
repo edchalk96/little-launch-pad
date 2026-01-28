@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const repeatButton = document.getElementById("repeat-button");
 
     repeatButton.addEventListener("click", function() {
-        speak()
-    })
+        speak();
+    });
 });
 
 //Check for which quiz to run
@@ -35,7 +35,7 @@ const icon = document.querySelector(".fa-volume-high");
 let savedAudio = localStorage.getItem("audioEnabled");
 let audio = (savedAudio === null) ? true : (savedAudio === "true");
 updateIcon(audio);
-let isAudioEnabled = localStorage.getItem("audioEnabled");;
+let isAudioEnabled = localStorage.getItem("audioEnabled");
 
 audioButton.addEventListener("click", function () {
     audio = !audio;
@@ -66,7 +66,7 @@ let incorrect = 0;
 const options = document.querySelectorAll(".answer-selection");
 
 //Audio feedback | Credit to Linial in stackoverflow - https://stackoverflow.com/questions/25095173/playing-a-audio-file-in-an-onclick-event
-let audioElement = document.createElement("audio")
+let audioElement = document.createElement("audio");
 
 //Section for colours quiz
 
@@ -233,10 +233,10 @@ let animationRunning = false;
 $(".answer-selection").click(function(event){
     if (animationRunning) return; //If the animation is running, this will prevent another click event triggering another animation before the quiz has reloaded
 
-    userAnswer = $(this).attr("data-answer")
+    userAnswer = $(this).attr("data-answer");
     userAnswerSelection = $(this);
     checkAnswer(event);
-})
+});
 
 function checkAnswer(event) {
     if (userAnswer === answer) {
@@ -249,15 +249,15 @@ function checkAnswer(event) {
 
 function generateQuestion(quizType) {
     document.getElementById("question-heading").innerHTML = `Which ${quizType} ${answer}?`;
-    speak()
+    speak();
 }
 
 function correctAnswer(event) {
 
-    showCoords(event)
+    showCoords(event);
 
     if (isAudioEnabled === "true") {
-        audioElement.setAttribute("src", "./assets/sounds/rocket-whoosh.mp3")
+        audioElement.setAttribute("src", "./assets/sounds/rocket-whoosh.mp3");
         audioElement.play();
     }
     
@@ -267,7 +267,7 @@ function correctAnswer(event) {
     setTimeout(() => {
         runQuiz();
         animationRunning = false;
-    }, 2500)
+    }, 2500);
 }
 
 //Credit to jackhals (reddit) and MDN- https://jsfiddle.net/320ch6um/ + https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
@@ -298,13 +298,13 @@ function incorrectAnswer () {
 
     incorrect++;
 
-    userAnswerSelection.removeClass("incorrect-animation")
+    userAnswerSelection.removeClass("incorrect-animation");
 
     userAnswerSelection.addClass("incorrect-animation");
     
     userAnswerSelection.one("animationend", function() {
         userAnswerSelection.removeClass("incorrect-animation");
-    })
+    });
 
     if (incorrect >= 3) {
         answerNudge();
@@ -318,12 +318,12 @@ function incorrectAnswer () {
 
 function answerNudge() {
     
-    correctAnswerSelection.classList.remove("answer-nudge")
+    correctAnswerSelection.classList.remove("answer-nudge");
 
     correctAnswerSelection.classList.add("answer-nudge");
     setTimeout(() => {
-        correctAnswerSelection.classList.remove("answer-nudge")
-    }, 2000)
+        correctAnswerSelection.classList.remove("answer-nudge");
+    }, 2000);
 
     if (isAudioEnabled === "true") {
         audioElement.setAttribute("src", "./assets/sounds/cartoon-close-bells.mp3");
