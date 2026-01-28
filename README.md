@@ -1,12 +1,12 @@
-# Little Launch Pad
+# Little Launch Pad Quiz Game
 
 ## By Ed Chalk
 
-[View the live project here.](PLACEHOLDER)
+[View the live project here.](https://edchalk96.github.io/little-launch-pad/)
 
-[View the repository here](PLACEHOLDER)
+[View the repository here](https://github.com/edchalk96/little-launch-pad)
 
-![Responsive website image](PLACEHOLDER)
+![Responsive website image](assets/images/amiresponsive-little-launch-pad.png)
 
 ## Table of Contents
 
@@ -195,7 +195,19 @@ An afterthought of which orientation would be most beneficial occurred whilst de
 
 ---
 
-PLACEHOLDER TEXT
+### *Features*
+
+#### *Header*
+
+The header remains consistent across the homepage and all quiz games to minimize distractions. This streamlined layout provides two essential functions: returning to the homepage and toggling the audio. These controls are balanced by the central project logo, which reinforces the fun, engaging atmosphere of the learning environment.
+
+#### *Audio button*
+
+To allow for a customizable learning environment, the audio toggle in the header can mute all animations and the question reader. This state is saved in local storage, so the setting remains consistent throughout the session. This is ideal for parents who prefer to engage directly by reading the questions to their child.
+
+#### *Footer*
+
+Similar to the header, the footer maintains a minimalist design. As these elements are intended for parents rather than children, the external links are deliberately smaller to prevent accidental clicks and keep the young user within the game environment. This section serves as a dedicated contact point for guardians to reach the developer.
 
 ---
 
@@ -212,6 +224,29 @@ PLACEHOLDER TEXT
     - JavaScript 
       - Utilised to make the project interactive for the user
 
+### *Frameworks, Libraries & Programs Used
+  
+    - Bootstrap (v5.3)
+      - The primary framework used for layout structure and ensuring a fully responsive design.
+    - Font Awesome (v7.1)
+      - Utilized for integrating various icons throughout the quiz.
+    - Google Fonts 
+      - Used to import and manage all typography across the project.
+    -JQuery (v3.7.1)
+      - Employed to streamline interactive JavaScript functionality and DOM manipulation.
+    - Bootstrap Icons 
+      - Supplemented the icon library to provide a wider variety of visual assets for specific games.
+    -Web Speech API 
+      - Implemented the SpeechSynthesis interface to provide text-to-speech narration of questions for young users.
+    - Git
+      - Used for version control, managing project commits and pushes via the Gitpod terminal.
+    - Github 
+      - Utilized for repository hosting and project deployment through GitHub Pages.
+    - Balsamiq
+      - Used to create the initial wireframes and structural layouts for all project pages.
+    - W3 Schools & MDN 
+      - Served as the primary documentation resources for technical guidance and coding best practices.
+    
 ---
 
 ## Testing
@@ -220,16 +255,60 @@ PLACEHOLDER TEXT
 
 ## Deployment
 
+### GitHub Pages
+
+This project is deployed using GitHub pages, achieved by the following steps:
+
+1. Log in to GitHub and locate the relevant [GitHub repository](https://github.com/edchalk96/little-launch-pad)
+2. Locate and click on the *Settings* link at the end of the horizontal menu, located at the top of the repository page.
+3. Locate and click on the *Pages* link on the left-hand side of the *Settings* page.
+4. In the *Build and deployment* section, under *Branch* click on *None* to reveal a dropdown menu and select *main*.
+5. Click *save* and refresh the page.
+6. Locate the now [Live Site](https://edchalk96.github.io/little-launch-pad/) at the top of the *GitHub Pages* page.
+
+### Forking the GitHub Repository
+
+Forking the GitHub repository allows you to make a copy of he original repository to view and/or make changes without afeecting the original repository. The following steps will fork your GitHub repository:
+
+1. Log in to GitHub and locate the relevant [GitHub repository](https://github.com/edchalk96/little-launch-pad)
+2. At the top of the **repository page**, south-east of *Settings*, locate the *Fork* button and click.
+3. This will now have created a copy of the oringial repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the relevant [GitHub repository](https://github.com/edchalk96/little-launch-pad)
+2. Under the repository name, to the right, click on the green **<> Code** dropdown button.
+3. To clone the repository using HTTPS, copy the URL by clicking the *copy to clipboard* icon or alternatively hightlight the URL, right click and copy.
+4. Open GitBash
+5. Change the working directory to the location where you would like the clines directory to be located.
+6. Type 'git clone' and paste the copied URL from step 3.
+7. Press enter and your local clone will be created in the selected location.
+
 ---
 
 ## Credits
 
-Colours: <https://www.color-hex.com/color/98fb98> and Ajilian Abbasi, M., Talaei, A., Talaei, A., Rezaei, A. (2014). 'The use of appropriate colors in the design of children's rooms: A Short Review', Journal of Pediatric Perspectives, 2(4.1), pp. 305-312. doi: 10.22038/ijp.2014.3204
+### Code
 
-Google Gemini was used to create the logo for the project.
+- [W3 Schools](https://www.w3schools.com/)
+  - Provided knowledge on various elements throughout the project within html, css and javascript code.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+  - Similar to W3 Schools, this provided and knowdledge library on various elemets throughout the project, most notably Web Speech API.
+- [Stackoverflow](https://stackoverflow.com/)
+  - Used to find solutions and troubleshoot bugs and issues with the project code.
+- [Code Institue](https://codeinstitute.net/)
+  - Elements within the project taken from the courses example coding projects, such as the dark overlay code for the hero image.
+  
+### Content
 
-Credit to MDN Web Docs for providing a knowledge on various elements within html, css and JavaScript.
+- Colours
+  - The colours of the project were chosen based on information by the folowing: <https://www.color-hex.com/color/98fb98> and Ajilian Abbasi, M., Talaei, A., Talaei, A., Rezaei, A. (2014). 'The use of appropriate colors in the design of children's rooms: A Short Review', Journal of Pediatric Perspectives, 2(4.1), pp. 305-312. doi: 10.22038/ijp.2014.3204
 
-Credit to font awesome for icons
+### Media
 
-Credit to Bootstrap for fro icons plus "html building blocks"
+- Google Gemini
+  - Google Gemini was used to create the logo for the project as well as the various feeling images.
+
+### Acknowledgements
+
+- Tutor support at Code Institue for support during the development of the project.

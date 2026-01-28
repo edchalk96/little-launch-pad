@@ -24,14 +24,6 @@ function runQuiz() {
         runShapes();
     } else if (window.location.pathname == "/little-launch-pad/feelings-quiz.html") {
         runFeelings();
-    } else if (window.location.pathname == "/colours-quiz.html") {
-        runColours();
-    } else if (window.location.pathname == "/numbers-quiz.html") {
-        runNumbers();
-    } else if (window.location.pathname == "/shapes-quiz.html") {
-        runShapes();
-    } else if (window.location.pathname == "/feelings-quiz.html") {
-        runFeelings();
     } else {
         console.log("No quiz found");
     }
