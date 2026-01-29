@@ -60,9 +60,8 @@ The overall goal of the users, child and parent/guardian (P/G) for this project 
 
 #### First Time Visitor Goals
 
-- **Child** | To initially be shown how the quiz game works by a parent/guardian
 - **P/G** | To read about the quiz game and how to play
-- **P/G** | To show child how to play and interact with the quiz game
+- **Child** | To initially be shown how the quiz game works by a parent/guardian
 - **P/G** | To chose whether the quiz game reads out the question or the P/G does
 - **Child** | Be able to choose from several different quiz games
 - **Child** | Begin to learn/improve on the fundamental concepts included in content of the quiz games
@@ -266,6 +265,35 @@ JSHint was utilized to audit the JavaScript code for potential errors and qualit
 
 ### User Story testing from UX Section
 
+#### *First Time Visitor Goals*
+
+- **P/G** | To read about the quiz game and how to play
+  - Withtin the home page, a drop down section was included with basic instructons for the parent in how the game functions
+- **Child** | To initially be shown how the quiz game works by a parent/guardian
+  - With parent using the "How to Play" instructions, the parent will be able to show the child how to play the quiz games and navigate the project
+- **P/G** | To chose whether the quiz game reads out the question or the P/G does
+  - Audio toggle button was included across all pages for the parent, or child, to chose if audio was enabled
+- **Child** | Be able to choose from several different quiz games
+  - 4 quiz games were included in this project all with easy access and recognisble icons for the child to select in the home page
+- **Child** | Begin to learn/improve on the fundamental concepts included in content of the quiz games
+  - During user testing, this was shown to be successful in aiding the user and their learning of these concepts
+
+#### *Returning Visitor Goals*
+
+- **Child** | Improve on the understanding of how to interact and navigate the quiz game
+  - After multiple user testing, navigation became easier each time for the user as they beame familair with the buttons and what they did
+- **Child** | Improve knowledge of the concepts in the games
+  - Similar to first time visitor goals, the functionality of the quiz game was shown to be successful in aiding and improving the understanding of the included concepts
+
+#### *Frequent User Goals*
+
+- **Child** | Be able to fully navigate and interact with the quiz game intuitively
+  - As above, multiple user testing has shown navigation became easier with each use
+- **Child** | Have fun improving/reinforcing the concepts into knowledgebase
+  - The inclusion of animations and sounds, especially the correct answer, has made this a fun interactive quiz
+- **P/G** | Observe child progress with their understanding of the concepts included & **P/G** | Observe child progress with relevant fine motor skills and confidence of using relevant smart device
+  - These user goals will be observed after prolonged use of the project, with inital observations from user testing showing this user goal to have been successful
+
 ### Further Testing
 
 - The quiz was tested across a variety of web browsers including:
@@ -285,9 +313,30 @@ JSHint was utilized to audit the JavaScript code for potential errors and qualit
 
 [Initial Lighthouse testing](./assets/testing/lighthouse-home-page.png)
 
-- As can be seen by the above lighthouse output, the main issue is accessibility. This is largely down to a lack of accesible names and the inclusion of alt text within links and logos. The other issues with accessibility were the contrast ratio in colours for some elements compared to the background as well as the links in the footer contact section not being large enough. The later of which was done on purpose to prevent accidental clicking of the target user. This was the case across each quiz game page, with each producing a simialr accessibility score than shown above, with the same issues being stated in the report. After some amendments based on the audit reports, an improved accessibility score can be seen below.
+- As indicated in the Lighthouse audit report above, the primary area for improvement was accessibility. The report identified missing accessible names for logos, buttons and links, as well as several color contrast issues. Additionally, the footer links were flagged for being too small; however, this was an intentional design choice to minimize accidental navigation by young users. These results were consistent across all quiz pages. Following targeted adjustments to address these findings, the project achieved the significantly improved accessibility scores shown below.
 
 [Lighthouse testing after amendments](./assets/testing/lighthouse-improvement.png)
+
+### Known Bugs and Fixes
+
+The below bugs and relevant fixes were seen during the development of the project as well as during testing after inital development.
+
+- During the development of the colour quiz, a logic error was identified where duplicate items were occasionally selected from the array. This caused user confusion, as a visually "correct" answer could be flagged as incorrect by the code. To resolve this, the toSpliced method was added to remove each item from the pool once selected for a round. This solution was standardized across all quiz games to ensure a bug-free experience throughout the project.
+- While developing the colour quiz, it was discovered that retrieving an answer directly from the CSS background property returned a computed RGB value rather than the expected colour name. To ensure a reliable comparison, the logic was shifted to store the colour names as custom data attributes within the HTML and by utilising setAttribute and jQuery’s .attr() method, a string for validation could be retreived, ensuring the game logic remained accurate and efficient.
+- While expanding the project beyond the initial colour quiz, it was identified that a hardcoded string in the question generation logic. The prompt was locked to "Which colour is...", regardless of the active quiz. To resolve this, and make the function dynamic, code was implemented to parse the HTML file path to determine the current quiz type. This allowed the question text to update automatically (e.g., "Which shape is..."), ensuring the logic is reusable across all quiz types.
+- Early testing revealed a bug where animations failed to trigger on consecutive incorrect attempts. This occurred because the animation class wasn't being removed quickly enough for the browser to register a new click. To resolve this, animationend event listener was added. This ensures the class is precisely removed the moment the animation finishes, allowing it to be instantly re-applied and triggered by subsequent user interactions.
+- During testing, a bug was discovered where the incorrect click counter failed to reset after a successful answer. This caused the "nudge" animation to trigger prematurely on the following question, as the counter continued to increment across the entire session. To resolve this, a reset function was added that clears the counter to zero upon every correct selection, ensuring the logic starts fresh for each new question.
+- User testing with a toddler revealed a concurrency issue where multiple clicks on a correct answer would trigger the correct answer logic repeatedly. This caused overlapping animations and multiple audio restarts, as the game attempted to reload for every click detected. To resolve this, a boolean flag was implemented within the click event function to track the animation state. By checking if an animation is currently in progress, subsequent clicks are ignored until the next question has successfully loaded and the flag is reset.
+- Following the initial deployment, a critical bug was identified where the quiz logic failed to execute on the live site. Investigation revealed a pathing discrepancy between the local IDE environment and the GitHub Pages file structure. This was resolved by refactoring the URL-parsing logic to accurately detect the quiz type, ensuring the correct game modules load seamlessly.
+- A related pathing conflict was identified post-deployment affecting the asset delivery for animations and audio files. Much like the quiz-type detection issue, the file paths for these media assets differed between the development and production environments. A similar fix was applied, ensuring all sound and image assets are correctly mapped and accessible on the live server.
+- During user testing, a logic gap was discovered where audio—including the text-to-speech narration—remained muted by default for new visitors. This occurred because the system only triggered sound if a user had previously interacted with the toggle. To improve this, an update was made for the initialization logic to check for a null value in local storage. If no preference is found, it defaults the audio state to "on," ensuring the narration is active from the very first session.
+
+---
+
+### Future Improvements
+
+1. A future enhancement for this project involves integrating a more advanced Text-to-Speech (TTS) engine. The goal is to transition from the standard system voice to a more natural, child-friendly synthesis that remains consistent across all browsers and operating systems. This would ensure that every user, regardless of their device, receives the same high-quality auditory guidance.
+2. A planned refinement involves addressing a limitation of the Web Speech API on mobile browsers. Currently, strict mobile security policies prevent TTS from triggering automatically on page load, requiring a manual click of the "Repeat Audio" button to activate. To resolve this, a future implementation of a "Start Quiz" landing gate will be required. This initial user interaction will provide the necessary "user gesture" token required by mobile browsers, allowing the audio to play seamlessly and automatically for all subsequent questions.
 
 ---
 
