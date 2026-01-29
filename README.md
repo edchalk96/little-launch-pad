@@ -281,11 +281,13 @@ JSHint was utilized to audit the JavaScript code for potential errors and qualit
 - Lighthouse
   - Lighthouse was utilized to assess the project's performance, accessibility, and best practices, implementing necessary optimizations to ensure a fast and efficient load time.
 
-  **Home Page**
+#### **Lighthouse Testing**
 
-![Lighthouse testing - Home page](./assets/testing/lighthouse-home-page.png)
+[Initial Lighthouse testing](./assets/testing/lighthouse-home-page.png)
 
-- As can be seen by the above lighthouse output, the main issue is accessibility. This is largely down to a lack of accesible names and the inclusion of alt text within links and logos. The other issues with accessibility were the contrast ratio in colours for some elements compared to the background as well as the links in the footer contact section not being large enough. The later of which was done on purpose to prevent accidental clicking of the target user. After some amendments based on this audit report, an improved accessibility score can be seen below.
+- As can be seen by the above lighthouse output, the main issue is accessibility. This is largely down to a lack of accesible names and the inclusion of alt text within links and logos. The other issues with accessibility were the contrast ratio in colours for some elements compared to the background as well as the links in the footer contact section not being large enough. The later of which was done on purpose to prevent accidental clicking of the target user. This was the case across each quiz game page, with each producing a simialr accessibility score than shown above, with the same issues being stated in the report. After some amendments based on the audit reports, an improved accessibility score can be seen below.
+
+[Lighthouse testing after amendments](./assets/testing/lighthouse-improvement.png)
 
 ---
 

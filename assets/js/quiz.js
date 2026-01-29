@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     runQuiz();
 
+    //Setting audio to default truwe value on first load
+    if (localStorage.getItem("audioEnabled") === null) {
+        localStorage.setItem("audioEnabled", "true");
+    }
+
     //Section for repeating question
     const repeatButton = document.getElementById("repeat-button");
 
@@ -24,8 +29,6 @@ function runQuiz() {
         runShapes();
     } else if (window.location.pathname == "/little-launch-pad/feelings-quiz.html") {
         runFeelings();
-    } else {
-        console.log("No quiz found");
     }
 }
 
