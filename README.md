@@ -127,7 +127,7 @@ The features decided to not been in scope for the initial development of this pr
 
 ---
 
-The Little Launch Pad project will utilize a theme specifically designed for preschool children (ages 2-4). Careful research will inform the selection of the color scheme, imagery, and other design elements, ensuring the final product remains fun and interactive without being visually overwhelming for the target audience.
+The Little Launch Pad project will utilize a theme specifically designed for preschool children (ages 2-4). Careful research will inform the selection of the colour scheme, imagery, and other design elements, ensuring the final product remains fun and interactive without being visually overwhelming for the target audience.
 
 #### Layout
 
@@ -135,15 +135,15 @@ To ensure the application is simple and intuitive for preschool children, the de
 
 #### *Colour Scheme*
 
-Since the primary audience is preschool children, the color scheme is a critical design element. Colors will be selected to be both bold and highly contrasting to effectively capture attention and sustain engagement, while simultaneously ensuring the palette is not overly aggressive or likely to cause visual overstimulation. Crucially, the use of strong contrast will ensure clarity, making various interactive elements, such as quiz answers, distinctly visible and unambiguous for the young user. The specific colors and their intended use plus rationales are listed below:
+Since the primary audience is preschool children, the colour scheme is a critical design element. Colours will be selected to be both bold and highly contrasting to effectively capture attention and sustain engagement, while simultaneously ensuring the palette is not overly aggressive or likely to cause visual overstimulation. Crucially, the use of strong contrast will ensure clarity, making various interactive elements, such as quiz answers, distinctly visible and unambiguous for the young user. The specific colours and their intended use plus rationales are listed below:
 
 - **Coral Orange** | #FF7F50
   - Use: Headings, call-to-action buttons, main logo colour
-  - Rationale: Orange has been chosen as the primary accent color due to its established benefits for children, including its warm, friendly, and youthful associations. Research suggests orange encourages confidence and independence (M. Abbasi *et al.*, 2014), attributes that align perfectly with the project's overall goals. The specific shade selected maintains high vibrancy for attention but is slightly softened to prevent it from being too glaring or overstimulating.
+  - Rationale: Orange has been chosen as the primary accent colour due to its established benefits for children, including its warm, friendly, and youthful associations. Research suggests orange encourages confidence and independence (M. Abbasi *et al.*, 2014), attributes that align perfectly with the project's overall goals. The specific shade selected maintains high vibrancy for attention but is slightly softened to prevent it from being too glaring or overstimulating.
 
 - **Sky Blue** | #87CEEB
   - Use: Main background colour for all pages as well as minor accenting where needed
-  - Rationale: Sky Blue is an excellent choice for the project's primary background color, both fitting the "launch pad and rocket" theme and providing psychological benefits. Blue is known to evoke calmness and reduce feelings of anxiety or aggression (M. Abbasi *et al.*, 2014), which is crucial for maintaining a fun and low-stress environment for children. Its light hue also ensures a high contrast background, allowing brighter, bolder accent colors to stand out clearly and maximize visual clarity.
+  - Rationale: Sky Blue is an excellent choice for the project's primary background colour, both fitting the "launch pad and rocket" theme and providing psychological benefits. Blue is known to evoke calmness and reduce feelings of anxiety or aggression (M. Abbasi *et al.*, 2014), which is crucial for maintaining a fun and low-stress environment for children. Its light hue also ensures a high contrast background, allowing brighter, bolder accent colours to stand out clearly and maximize visual clarity.
 
 - **Gold** | #FFD700
   - Use: Subtle highlights used to maintain a "pop" in various elements where needed, like positive feedback elements.
@@ -151,7 +151,7 @@ Since the primary audience is preschool children, the color scheme is a critical
 
 - **Pale Green** | #98FB98
   - Use: Secondary accent colour and check marks etc.
-  - Rationale: Similar to blue, Green is included for its symbolic representation of nature, promoting a soothing and calming environment. Research indicates green effectively reduces anxiety and increases concentration (M. Abbasi *et al.*, 2014). Since this is a pastel shade, it compounds the calming effect, making it an ideal choice for contrasting against brighter colors while successfully avoiding visual overstimulation.
+  - Rationale: Similar to blue, Green is included for its symbolic representation of nature, promoting a soothing and calming environment. Research indicates green effectively reduces anxiety and increases concentration (M. Abbasi *et al.*, 2014). Since this is a pastel shade, it compounds the calming effect, making it an ideal choice for contrasting against brighter colours while successfully avoiding visual overstimulation.
 
 - **Cultured** | #F8F8F8
   - Use: Text colour and card backgrounds
@@ -183,7 +183,7 @@ Balsamiq was utilized to develop the project's wireframes, which serve as the fo
 
 - #### Feelings and Faces | [View](./documentation/wireframes/little-launch-pad-feelings-and-faces.pdf)
 
-Being an initial concept, some aspects were altered during development of the project as well as some minor additions being added. The below list are the amendments and additions made to project, not seen in the wireframes:
+Being an initial concept, some aspects were altered during development of the project as well as some minor additions. The below list are the amendments and additions made to project, not seen in the wireframes:
 
 - Deviations from the colour scheme for feelings to use the relevant colours associated with that feeling as well as for colour quiz questions.
 - An afterthought of which orientation would be most beneficial occurred whilst developing the project. Although it will be designed to use in portrait orientation as well as landscape, it will be included in the instructions to use a landscape orientation to the benefit of the child. The orientation shown in the wireframe however were portrait, for smart devices.
@@ -279,7 +279,7 @@ JSHint was utilized to audit the JavaScript code for potential errors and qualit
 #### *Returning Visitor Goals*
 
 - **Child** | Improve on the understanding of how to interact and navigate the quiz game
-  - After multiple user testing, navigation became easier each time for the user as they beame familair with the buttons and what they did
+  - After multiple user testing, navigation became easier each time for the user as they beame familair with the buttons and what they do
 - **Child** | Improve knowledge of the concepts in the games
   - Similar to first time visitor goals, the functionality of the quiz game was shown to be successful in aiding and improving the understanding of the included concepts
 
@@ -311,7 +311,7 @@ JSHint was utilized to audit the JavaScript code for potential errors and qualit
 
 [Initial Lighthouse testing](./assets/testing/lighthouse-home-page.png)
 
-- As indicated in the Lighthouse audit report above, the primary area for improvement was accessibility. The report identified missing accessible names for logos, buttons and links, as well as several color contrast issues. Additionally, the footer links were flagged for being too small; however, this was an intentional design choice to minimize accidental navigation by young users. These results were consistent across all quiz pages. Following targeted adjustments to address these findings, the project achieved the significantly improved accessibility scores shown below.
+- As indicated in the Lighthouse audit report above, the primary area for improvement was accessibility. The report identified missing accessible names for logos, buttons and links, as well as several colour contrast issues. Additionally, the footer links were flagged for being too small; however, this was an intentional design choice to minimize accidental navigation by young users. These results were consistent across all quiz pages. Following targeted adjustments to address these findings, the project achieved the significantly improved accessibility scores shown below.
 
 [Lighthouse testing after amendments](./assets/testing/lighthouse-improvement.png)
 
