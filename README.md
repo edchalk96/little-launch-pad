@@ -221,7 +221,7 @@ Similar to the header, the footer maintains a minimalist design. As these elemen
     - JavaScript 
       - Utilised to make the project interactive for the user
 
-### *Frameworks, Libraries & Programs Used
+### *Frameworks, Libraries & Programs Used*
   
     - Bootstrap (v5.3)
       - The primary framework used for layout structure and ensuring a fully responsive design.
@@ -247,6 +247,35 @@ Similar to the header, the footer maintains a minimalist design. As these elemen
 ---
 
 ## Testing
+
+### *Manual vs Automated Testing Principles*
+
+Web applications like this project generally utilize two testing methodologies: manual and automated. Choosing between them depends on the project's scale, the complexity of the features, and the specific goals of the test phase.
+
+#### Manual Testing
+
+Manual testing requires a human user to interact directly with the application, verifying that specific actions trigger the intended responses.
+
+- It is highly effective for evaluating UI/UX design, as it allows for subjective assessment of the "look and feel." It is also ideal for quick, ad-hoc checks of new features.
+- Because it relies on human input, it is prone to oversight and fatigue. It is best suited for smaller projects, as the time required to manually re-test every element can become prohibitive as a project grows.
+
+#### Automated Testing
+
+Automated testing employs software tools (like Jest) and pre-written scripts to execute tests and verify outcomes against defined criteria.
+
+- This approach is indispensable for large-scale, complex projects. It excels at "regression testing"—running repetitive tests to ensure that new code changes haven't inadvertently introduced bugs elsewhere.
+- While it requires an initial time investment for setup and a technical understanding of testing frameworks, it significantly reduces the margin of error and saves time in the long run. It can also detect deep-seated bugs that a human tester might easily overlook.
+
+| Feature             | Manual Testing                                 | Automated Testing                                              |
+| --------------------| :--------:                                     | :---------------:                                              |
+| Set-up Time         | Minimal/None                                   | High (Requires writing script)                                 |
+| Technical Knowledge | None required                                  | Coding knowledge required of specific tool                     |
+| Reliability         | Subject to human error                         | Consistent                                                     |
+| Best For            | Small/simple projects or visuals and UX design | Large-scale and/or complex applications and regression testing |
+
+The primary goal was to ensure the application was usable by a child of pre-school age, meaning the interface had to be simple enough for a child to navigate and understand. Because automated scripts cannot provide feedback on subjective ease-of-use or human intuition, manual testing was the most effective way to validate the user experience and ensure the project met its goals.
+
+### Validator testing
 
 The W3C Markup and CSS Validator Services were utilized to validate the codebase across all pages. This process ensured full compliance with industry standards and a high-quality, error-free final product.
 
